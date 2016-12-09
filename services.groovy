@@ -5,12 +5,12 @@ projects.add([name: 'list', port: 10010])
 projects.add([name: 'board', port: 10000])
 
 projects.each {
-  def projectName = "jak-" + it.name
+  def projectName = 'jak-' + it.name
   def shortName = it.name
-  def infrastructureName = it.name + "-infrastructure"
+  def infrastructureName = it.name + '-infrastructure'
   def port = it.port
-  def gitUrl = https://github.com/reneleban/jak-services.git
-  def branch = "develop"
+  def gitUrl = 'https://github.com/reneleban/jak-services.git'
+  def branch = 'develop'
 
   job(projectName) {
     scm {

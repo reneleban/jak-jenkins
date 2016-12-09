@@ -28,7 +28,7 @@ projects.each {
     steps {
       shell("docker build -t ${projectName} -f ${shortName}.docker .")
       shell("docker tag ${projectName} localhost:5000/${projectName}:latest")
-      shell("docker push localhost:5000/${projectName}-:latest")
+      shell("docker push localhost:5000/${projectName}:latest")
       shell("docker stop ${projectName}")
       shell("docker rm ${projectName}")
       shell("docker run -d -v ${projectName}-storage:/application/data -p ${port}:${port} --restart=always --name ${projectName} localhost:5000/${projectName}:latest")

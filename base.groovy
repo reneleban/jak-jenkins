@@ -1,5 +1,7 @@
 def shortName = 'base'
 def projectName = "jak-${shortName}"
+def gitUrl = 'https://github.com/reneleban/jak-services.git'
+def branch = 'develop'
 
 job(projectName) {
   scm {

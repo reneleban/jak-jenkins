@@ -38,5 +38,5 @@ def buildService(name) {
 def deployService(projectName, port) {
     sh "docker stop ${projectName}"
     sh "docker rm ${projectName}"
-    sh "docker run -d -v ${projectName}-storage:/application/data -p ${port}:${port} --restart=always --name ${projectName} localhost:5000/${projectName}:latest"
+    sh "docker run -d -v ${projectName}-storage:/application/data -p 127.0.0.1:${port}:${port} --restart=always --name ${projectName} localhost:5000/${projectName}:latest"
 }
